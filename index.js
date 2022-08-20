@@ -7,6 +7,7 @@ const plainText = "Hello This Is Langesh";
 const key = Math.ceil(Math.random() * 52);
 
 console.log("\n*** Encrypting ***\n");
+
 const cipher = encrypt(plainText, key);
 
 console.log({
@@ -27,6 +28,12 @@ console.log({
 
 console.log("\n*** Cracking Key ***\n");
 
+const start = new Date();
+
 const crackedValues = bruteForce(cipher);
 
+const timeTaken = new Date() - start;
+
 console.log(crackedValues);
+
+console.log(`\nTime Taken : ${timeTaken}ms`);
